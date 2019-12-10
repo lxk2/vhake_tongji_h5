@@ -1,0 +1,16 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$mainColor: #0E1730;
+
+.van-image {
+  width: 100%!important;
+  height: 100%!important;
+}
+
+.van-tabbar {
+  border-top: 1px solid #D8D8D8;
+}
