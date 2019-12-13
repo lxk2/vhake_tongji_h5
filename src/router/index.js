@@ -29,17 +29,39 @@ const routes = [
         path: '/home/dynamicDisplay',
         name: 'home/dynamicDisplay',
         component: resolve => require(['../views/home/dynamicDisplay'], resolve)
+      },
+      {
+        path: '/home/statisticalNote',
+        name: 'home/statisticalNote',
+        component: resolve => require(['../views/home/statisticalNote'], resolve)
+      },
+      {
+        path: '/home/interfaceCall',
+        name: 'home/interfaceCall',
+        component: resolve => require(['../views/home/interfaceCall'], resolve)
+      },
+      {
+        path: '/calculus/result',
+        name: 'calculus/result',
+        component: resolve => require(['../views/calculus/list'], resolve)
+      },
+      {
+        path: '/calculus/statisticalNote',
+        name: 'calculus/statisticalNote',
+        component: resolve => require(['../views/calculus/statisticalNote'], resolve)
+      },
+      {
+        path: '/calculus/interfaceCall',
+        name: 'calculus/interfaceCall',
+        component: resolve => require(['../views/calculus/interfaceCall'], resolve)
+      },
+      {
+        path: '/calculus/verification',
+        name: 'calculus/verification',
+        component: resolve => require(['../views/calculus/verification'], resolve)
       }
     ]
   }
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({

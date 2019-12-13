@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div ref="echart" id="container"></div>
+    <div class="title">
+      统计说明
+    </div>
+    <div class="content">
+
+    </div>
   </div>
 </template>
 
@@ -14,13 +19,11 @@ export default {
 
   },
   mounted () {
-    this.$nextTick(() => {
-      this.initEchart()
-    })
+
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/views/homeDynamicDisplay.scss';
+@import '~@/assets/style/views/calculusStatisticalNote.scss';
 </style>
