@@ -81,7 +81,6 @@ export default {
   mounted () {
     this.$nextTick(() => {
       this.initBS()
-      console.log(this.myScroll)
     })
   }
 }

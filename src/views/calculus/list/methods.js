@@ -11,13 +11,5 @@ export default {
     } else {
       this.myScroll.refresh()
     }
-    // if (!this.myScroll2) {
-    //   this.myScroll2 = new BScroll(this.$refs.myScroll2, {
-    //     scrollX: true,
-    //     eventPassthrough: 'vertical'
-    //   })
-    // } else {
-    //   this.myScroll2.refresh()
-    // }
   }
 }
