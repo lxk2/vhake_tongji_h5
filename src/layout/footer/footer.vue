@@ -6,7 +6,7 @@
       <p>Copyright © 1998- 2016 HuaQi. All Rights Reserved.</p>
       <p>奇趣统计 版权所有</p>
     </div>
-    <van-tabbar ref="tabbar" v-show="tabbarNameList.indexOf($route.name) !== -1" v-model="active" :route="true" :safe-area-inset-bottom="true" :border="true">
+    <van-tabbar ref="tabbar" v-show="tabbarNameList.indexOf($route.name) !== -1" :value="active" :route="true" :safe-area-inset-bottom="true" :border="true">
       <van-tabbar-item :icon="item.icon[active]" v-for="item in iconList" :key="item.id" :to="item.to">{{ item.name }}</van-tabbar-item>
     </van-tabbar>
   </div>
@@ -15,11 +15,11 @@
 <script>
 import Vue from 'vue'
 import { Tabbar, TabbarItem } from 'vant'
+import { mapState } from 'vuex'
 Vue.use(Tabbar).use(TabbarItem)
 export default {
   data () {
     return {
-      active: 0,
       iconList: [
         {
           id: 1,
@@ -40,9 +40,6 @@ export default {
           to: '/calculus'
         }
       ],
-      tabbarNameList: [
-        'index'
-      ],
       copyrightBottom: 0
     }
   },
@@ -50,12 +47,23 @@ export default {
 
   },
   props: {
-
+    tabbarNameList: {
+      type: Array,
+      default: () => []
+    }
   },
   created () {
     this.$nextTick(() => {
       this.copyrightBottom = this.$refs.tabbar.$el.offsetHeight
     })
+  },
+  computed: {
+    ...mapState([
+      'tabbarActive'
+    ]),
+    active () {
+      return this.tabbarActive
+    }
   }
 }
 </script>

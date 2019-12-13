@@ -1,0 +1,21 @@
+.cell {
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 710px;
+  margin: 0 auto;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 0 30px;
+  &-left {
+    font-size: 30px;
+    line-height: 1;
+    color: #333;
+  }
+  &-right {
+    font-size: 30px;
+    line-height: 1;
+    color: #333;
+  }
+}

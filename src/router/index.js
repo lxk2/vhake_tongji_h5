@@ -19,6 +19,16 @@ const routes = [
         path: '/calculus',
         name: 'calculus',
         component: resolve => require(['../views/calculus'], resolve)
+      },
+      {
+        path: '/home/result',
+        name: 'home/result',
+        component: resolve => require(['../views/home/list'], resolve)
+      },
+      {
+        path: '/home/dynamicDisplay',
+        name: 'home/dynamicDisplay',
+        component: resolve => require(['../views/home/dynamicDisplay'], resolve)
       }
     ]
   }

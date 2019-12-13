@@ -17,7 +17,8 @@ router.beforeEach(async (to, from, next) => {
   next()
 })
 
-router.afterEach(() => {
+router.afterEach(async (to, from) => {
+  store.dispatch('upTabbarActive', to.name)
   NProgress.done()
 })
 

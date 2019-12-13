@@ -1,10 +1,13 @@
 <template>
   <div>
-    <Banner></Banner>
+    <Banner :tabbarNameList="tabbarNameList"></Banner>
     <router-view :style="{
-      marginBottom: bottomMargin + 'px'
+      position: 'relative',
+      marginBottom: bottomMargin + 'px',
+      background: '#FFFFFF',
+      minHeight: tabbarNameList.indexOf($route.name) !== -1 ? 0 : `calc(100vh - ${bottomMargin}px)`
     }" />
-    <Footer ref="myFooter"></Footer>
+    <Footer ref="myFooter" :tabbarNameList="tabbarNameList"></Footer>
   </div>
 </template>
 
@@ -18,7 +21,11 @@ export default {
   },
   data () {
     return {
-      bottomMargin: 0
+      bottomMargin: 0,
+      tabbarNameList: [
+        'index',
+        'calculus'
+      ]
     }
   },
   methods: {},
