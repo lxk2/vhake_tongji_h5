@@ -3,7 +3,7 @@
     <div class="title">
       接口调用
     </div>
-    <div class="content">
+    <div class="content" v-html="content">
 
     </div>
   </div>
@@ -15,7 +15,9 @@ import methods from './methods'
 export default {
   data,
   methods,
-  created () {},
+  created () {
+    this.getData()
+  },
   mounted () {}
 }
 </script>

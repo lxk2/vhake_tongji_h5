@@ -4,13 +4,13 @@
       <div class="label">
         统计时间
       </div>
-      <el-input v-model="formData.create_time" placeholder=""></el-input>
+      <el-input v-model="form.opentime" placeholder=""></el-input>
     </div>
     <div class="item">
       <div class="label">
         点击量
       </div>
-      <el-input v-model="formData.create_time" placeholder=""></el-input>
+      <el-input v-model="form.resultnum" placeholder=""></el-input>
     </div>
     <div class="item">
       <div class="label">
@@ -22,15 +22,15 @@
       <div class="label">
         哈希值
       </div>
-      <el-input type="textarea" value="a0b725519ce3f30bcbb733a87c85720a3cd96d467542f9009a67df274348158dc3cc4795dc928387bba99a2df02440338728bce49c3c7029e4eb7b71e423791c" placeholder="" autosize></el-input>
+      <el-input type="textarea" :value="netData.hash" placeholder="" autosize></el-input>
     </div>
     <div class="item">
       <div class="label">
         演算结果
       </div>
-      <el-input value="10,7,2,5,1,9,3,8,6,4" placeholder=""></el-input>
+      <el-input :value="netData.result" placeholder=""></el-input>
     </div>
-    <van-button round type="info" class="myBtn">验证</van-button>
+    <van-button round type="info" class="myBtn" @click="submitForm">验证</van-button>
   </div>
 </template>
 
@@ -44,7 +44,16 @@ Vue.use(Input).use(Button)
 export default {
   data,
   methods,
-  created () {},
+  created () {
+    let query = this.$route.query
+    this.form = {
+      opentime: query.opentime || '',
+      resultnum: query.resultnum || '',
+      sum: query.sum || '',
+      inputValue: query.inputValue || '',
+      is_mobile: 1
+    }
+  },
   mounted () {}
 }
 </script>

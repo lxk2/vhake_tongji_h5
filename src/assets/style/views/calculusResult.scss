@@ -3,7 +3,7 @@
 .myScroll {
   width: 750px;
   height: 100%;
-  position: fixed;
+  //position: fixed;
   left: 0;
   top: 0;
 }
@@ -36,7 +36,7 @@
 }
 
 .td {
-  
+
   &:first-of-type {
     width: 150px;
     padding: 0 10px 0 30px;
@@ -69,13 +69,12 @@
 
 .table-body {
   width: 1656px;
-  margin-top: 88px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
+  padding-top: 88px;
+  //position: absolute;
+  //left: 0;
+  //top: 0;
   height: 100%;
-  box-sizing: border-box;
+  //box-sizing: border-box;
   .tr {
     width: 1656px;
     height: 180px;
@@ -101,11 +100,15 @@
 .fiexd {
   background: $mainColor;
   text-align: center;
+  position: fixed;
+  right: 0;
+  top: 0;
   width: 150px;
   height: 88px;
   color: #fff;
   line-height: 88px;
   font-size: 30px;
+  z-index: 999999;
 }
 
 .x-fixed {

@@ -3,7 +3,7 @@
     <div class="title">
       统计说明
     </div>
-    <div class="content">
+    <div class="content" v-html="content">
 
     </div>
   </div>
@@ -16,7 +16,7 @@ export default {
   data,
   methods,
   created () {
-
+    this.getData()
   },
   mounted () {
 

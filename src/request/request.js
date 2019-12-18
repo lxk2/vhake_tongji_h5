@@ -21,13 +21,16 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     // do something before request is sent
-    loadingInstance = Loading.service({
-      lock: true
-    })
+    if (config.url.indexOf('loop') === -1) {
+      loadingInstance = Loading.service({
+        lock: true
+      })
+    }
     return config
   },
   error => {
     // do something with request error
+    // eslint-disable-next-line
     console.log(error)
     return Promise.reject(error)
   }
@@ -36,12 +39,13 @@ service.interceptors.request.use(
 // 添加相应拦截器
 service.interceptors.response.use(
   response => {
-    loadingInstance.close()
+    loadingInstance && loadingInstance.close()
     const res = response.data
     // do something ...
     return res
   },
   error => {
+    // eslint-disable-next-line
     console.log('err' + error) // for debug
     Notify({
       type: 'danger',

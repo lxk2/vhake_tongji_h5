@@ -16,4 +16,9 @@ export default {
 
 <style lang="scss">
 @import '~@/assets/style/comm.scss';
+.content {
+  img {
+    max-width: 100%!important;
+  }
+}
 </style>

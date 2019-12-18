@@ -34,13 +34,13 @@
             {{ item.id }}
           </div>
           <div class="td">
-            {{ item.create_time }}
+            {{ item.opentime }}
           </div>
           <div class="td">
-            {{ item.online_users }}
+            {{ item.resultnum | toThousandFilter }}
           </div>
           <div class="td">
-            {{ item.volatility }}
+            {{ item.f_value }}
           </div>
         </div>
         </van-list>
@@ -63,7 +63,7 @@ export default {
     backTop
   },
   created () {
-
+    this.getList(() => {})
   },
   mounted () {
 
