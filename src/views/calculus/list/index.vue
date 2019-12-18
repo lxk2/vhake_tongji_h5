@@ -30,7 +30,9 @@
               @load="onLoad"
               :immediate-check="false"
             >
-              <div class="tr" v-for="item in list" :key="item.id">
+              <div class="tr" v-for="(item, index) in list" :key="item.id" :class="{
+                active: index % 2 === 1
+              }">
                 <div class="td">{{ item.id }}</div>
                 <div class="td">{{ item.opentime }}</div>
                 <div class="td">{{ item.resultnum | toThousandFilter }}</div>
@@ -73,4 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/views/calculusResult.scss";
+.active {
+  background: #f7f7f7!important;
+}
 </style>

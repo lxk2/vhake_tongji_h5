@@ -10,6 +10,7 @@ import 'vant/lib/index.less'
 import './assets/style/reset.scss' // 引入全局样式
 import * as filters from './filters' // global filters
 import * as statusCode from './request/statusCode'
+import { Toast } from 'vant'
 
 // 简单配置
 NProgress.inc(0.2)
@@ -29,6 +30,8 @@ router.afterEach(async (to, from) => {
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
+
+Vue.use(Toast)
 
 Vue.config.productionTip = false
 
