@@ -22,7 +22,9 @@
       <div class="label">
         哈希值
       </div>
-      <el-input type="textarea" :value="netData.hash" placeholder="" autosize></el-input>
+      <el-input type="textarea" :value="netData.hash" placeholder="" :autosize="{
+        minRows: 2, maxRows: 4
+      }"></el-input>
     </div>
     <div class="item">
       <div class="label">

@@ -21,4 +21,7 @@ export default {
     max-width: 100%!important;
   }
 }
+  textarea {
+    outline: none!important;
+  }
 </style>
