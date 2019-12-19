@@ -65,7 +65,7 @@ export default {
     backTop
   },
   created () {
-    this.getList(() => {})
+    this.getList()
   },
   mounted () {
 
