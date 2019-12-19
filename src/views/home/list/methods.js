@@ -1,18 +1,19 @@
 import { getList } from '@/api'
 export default {
-  async onLoad () {
+  onLoad () {
     this.page++
-    await this.getList()
-    console.log('走到这里了吗')
-    this.loading = false
+    this.getList(() => {
+      this.loading = false
+    })
   },
-  async onRefresh () {
+  onRefresh () {
     this.list = []
     this.page = 1
-    await this.getList()
-    this.isRefresh = false
+    this.getList(() => {
+      this.isRefresh = false
+    })
   },
-  getList () {
+  getList (backcall) {
     getList({
       page: this.page,
       list_rows: this.list_rows
@@ -30,6 +31,7 @@ export default {
           } else {
             this.list = this.list.concat(res.data.list)
           }
+          backcall(true)
         } else {
           this.$toast.fail(res.msg)
         }

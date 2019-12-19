@@ -3,8 +3,8 @@
     <div class="copyright" :style="{
       bottom: tabbarNameList.indexOf($route.name) !== -1 ? copyrightBottom + 'px' : '0px'
     }">
-      <p>Copyright © 1998- 2016 HuaQi. All Rights Reserved.</p>
-      <p>奇趣统计 版权所有</p>
+      <p>Copyright © 1998- 2019 RuYi. All Rights Reserved.</p>
+      <p>如意统计 版权所有</p>
     </div>
     <van-tabbar ref="tabbar" v-show="tabbarNameList.indexOf($route.name) !== -1" :value="active" :route="true" :safe-area-inset-bottom="true" :border="true">
       <van-tabbar-item :icon="item.icon[active]" v-for="item in iconList" :key="item.id" :to="item.to">{{ item.name }}</van-tabbar-item>

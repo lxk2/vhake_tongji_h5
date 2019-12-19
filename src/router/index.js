@@ -4,59 +4,61 @@ import Home from '../layout/index/index.vue'
 
 Vue.use(VueRouter)
 
+const BasePath = '/baidu'
+
 const routes = [
   {
-    path: '/',
+    path: `${BasePath}`,
     name: 'home',
     component: Home,
     children: [
       {
-        path: '/',
+        path: `${BasePath}`,
         name: 'index',
         component: resolve => require(['../views/home'], resolve)
       },
       {
-        path: '/calculus',
+        path: `${BasePath}/calculus`,
         name: 'calculus',
         component: resolve => require(['../views/calculus'], resolve)
       },
       {
-        path: '/home/result',
+        path: `${BasePath}/home/result`,
         name: 'home/result',
         component: resolve => require(['../views/home/list'], resolve)
       },
       {
-        path: '/home/dynamicDisplay',
+        path: `${BasePath}/home/dynamicDisplay`,
         name: 'home/dynamicDisplay',
         component: resolve => require(['../views/home/dynamicDisplay'], resolve)
       },
       {
-        path: '/home/statisticalNote',
+        path: `${BasePath}/home/statisticalNote`,
         name: 'home/statisticalNote',
         component: resolve => require(['../views/home/statisticalNote'], resolve)
       },
       {
-        path: '/home/interfaceCall',
+        path: `${BasePath}/home/interfaceCall`,
         name: 'home/interfaceCall',
         component: resolve => require(['../views/home/interfaceCall'], resolve)
       },
       {
-        path: '/calculus/result',
+        path: `${BasePath}/calculus/result`,
         name: 'calculus/result',
         component: resolve => require(['../views/calculus/list'], resolve)
       },
       {
-        path: '/calculus/statisticalNote',
+        path: `${BasePath}/calculus/statisticalNote`,
         name: 'calculus/statisticalNote',
         component: resolve => require(['../views/calculus/statisticalNote'], resolve)
       },
       {
-        path: '/calculus/interfaceCall',
+        path: `${BasePath}/calculus/interfaceCall`,
         name: 'calculus/interfaceCall',
         component: resolve => require(['../views/calculus/interfaceCall'], resolve)
       },
       {
-        path: '/calculus/verification',
+        path: `${BasePath}/calculus/verification`,
         name: 'calculus/verification',
         component: resolve => require(['../views/calculus/verification'], resolve)
       }

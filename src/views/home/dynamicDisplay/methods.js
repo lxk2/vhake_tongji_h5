@@ -55,6 +55,7 @@ export default {
       .then(res => {
         if (res.code === this.$statusCode.SUCCESS_CODE) {
           let data = res.data
+          this.temp = data.temp
           let options = {
             title: {
               text: ''
