@@ -20,12 +20,14 @@ router.beforeEach(async (to, from, next) => {
   NProgress.start()
   if (to.path === '/') {
     next({
-      path: '/baidu'
+      path: '/baidu',
+      query: to.query
     })
   }
   if (to.path.indexOf('/baidu') === -1) {
     next({
-      path: '/baidu' + to.path
+      path: '/baidu' + to.path,
+      query: to.query
     })
   }
   next()

@@ -7,8 +7,10 @@
 <script>
 export default {
   created () {
+    let domain = 'http://cs.thelatest.cn/'
+    // let domain = 'http://www.w50f.cn/'
     if (!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-      window.location.replace('http://cs.thelatest.cn/')
+      window.location.replace(domain)
     }
   }
 }
