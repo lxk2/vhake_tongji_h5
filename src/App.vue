@@ -8,7 +8,7 @@
 export default {
   created () {
     // let domain = 'http://cs.thelatest.cn/'
-    let domain = 'http://www.w50f.cn/'
+    let domain = 'http://www.w50f.cn:88/'
     if (!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
       window.location.replace(domain)
     }
